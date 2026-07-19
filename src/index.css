@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+.app {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #666;
+  font-size: 18px;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.left-panel,
+.right-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.panel {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.panel h3 {
+  margin-bottom: 15px;
+}
+
+.paper {
+  height: 700px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: royalblue;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2459d4;
+}
+
+section {
+  margin-top: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: gray;
+}
+.text-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  resize: vertical;
+  font-size: 16px;
+}
+
+.paper {
+  position: relative;
+  height: 700px;
+  background: white;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background-image: repeating-linear-gradient(
+    to bottom,
+    white 0px,
+    white 31px,
+    #bcdcff 32px
+  );
+}
+
+.margin-line {
+  position: absolute;
+
+  left: 60px;
+
+  top: 0;
+
+  bottom: 0;
+
+  width: 2px;
+
+  background: crimson;
+}
+
+.paper-content {
+  position: absolute;
+
+  top: 20px;
+
+  left: 80px;
+
+  right: 30px;
+
+  white-space: pre-wrap;
+
+  line-height: 32px;
+
+  font-size: 22px;
+
+  font-family: cursive;
+}
