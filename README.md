@@ -1,75 +1,122 @@
-# React + TypeScript + Vite
+# ✍️ HandWrite AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Generate realistic handwritten notebook pages from digital text.
 
-Currently, two official plugins are available:
+HandWrite AI is a React + TypeScript web application that converts typed text into realistic handwritten pages. Users can customize handwriting style, page layout, spacing, margins, and other settings before exporting the final handwritten document.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> **Project Status:** 🚧 Currently under development.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+* 📝 Live text preview
+* 📄 Realistic notebook paper preview
+* ✍️ Multiple handwriting font support *(coming soon)*
+* 📐 Adjustable page margins *(coming soon)*
+* 📏 Line spacing controls *(coming soon)*
+* 📚 Different page styles *(coming soon)*
+* 🎨 Ink color customization *(coming soon)*
+* 📥 Export handwritten pages as images/PDF *(planned)*
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* React
+* TypeScript
+* Vite
+* CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
+## 📸 Preview
+
+*(Screenshots will be added as development progresses.)*
+
+---
+
+## 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/VRATEJDWIVEDI/handwrite-ai.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Navigate into the project
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+cd handwrite-ai
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+The application will be available at:
 
 ```
+http://localhost:5173
+```
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── components/
+├── assets/
+├── App.tsx
+├── App.css
+├── index.css
+└── main.tsx
+```
+
+---
+
+## 🗺️ Roadmap
+
+* [x] Project setup
+* [x] Notebook-style paper preview
+* [x] Live text preview
+* [ ] Handwriting font selector
+* [ ] Google Fonts integration
+* [ ] Adjustable spacing
+* [ ] Margin controls
+* [ ] Page templates
+* [ ] Image export
+* [ ] PDF export
+* [ ] Custom handwriting uploads
+
+---
+
+## 🤝 Contributing
+
+Contributions, feature suggestions, and bug reports are welcome.
+
+Feel free to open an issue or submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Vratej Dwivedi**
+
+GitHub: https://github.com/VRATEJDWIVEDI
