@@ -1,6 +1,17 @@
-import type { Settings, SetSettings } from "../types/settings";
+import type { Dispatch, SetStateAction } from "react";
 
-type PaperPreviewProps = {
-  settings: Settings;
-  setSettings: SetSettings;
+export type Settings = {
+  text: string;
+  fontFamily: string;
+  fontSize: number;
+  inkColor: string;
+  letterSpacing: number;
+  wordSpacing: number;
+
+  pageSize: "A4" | "Letter";
+  lineHeight: number;
+  margin: number;
+  paperTheme: "notebook" | "blank" | "exam";
 };
+
+export type SetSettings = Dispatch<SetStateAction<Settings>>;

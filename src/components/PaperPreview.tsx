@@ -1,23 +1,28 @@
+import type { Settings, SetSettings } from "../types/settings";
+import { wrapText } from "../utils/textWrapper";
+import { paginate } from "../utils/pagination";
+
 type PaperPreviewProps = {
-  settings: {
-    text: string;
-    fontFamily: string;
-    fontSize: number;
-  };
-  setSettings: React.Dispatch<
-    React.SetStateAction<{
-      text: string;
-      fontFamily: string;
-      fontSize: number;
-    }>
-  >;
+  settings: Settings;
+  setSettings: SetSettings;
 };
 
 function PaperPreview({
   settings,
   setSettings,
 }: PaperPreviewProps) {
+  const wrappedLines = wrapText(
+    settings.text,
+    600,
+    settings.fontFamily,
+    settings.fontSize
+  );
+
+  const pages = paginate(wrappedLines, 20);
+
   return (
+
+
     <div>
       <h2>Input Text</h2>
 
@@ -36,21 +41,53 @@ function PaperPreview({
 
       <h2>Preview</h2>
 
-      <div className="paper">
+<div className="preview-pages">
+  {pages.length === 0 ? (
+    <div className="paper">
+      <div className="margin-line"></div>
+
+      <div
+        className="paper-content"
+        style={{
+          fontFamily: settings.fontFamily,
+          fontSize: settings.fontSize,
+          color: settings.inkColor,
+          letterSpacing: `${settings.letterSpacing}px`,
+          wordSpacing: `${settings.wordSpacing}px`,
+          lineHeight: settings.lineHeight,
+          padding: `${settings.margin}px`,
+        }}
+      >
+        Your handwriting preview will appear here.
+      </div>
+    </div>
+  ) : (
+    pages.map((page, pageIndex) => (
+      <div className="paper" key={pageIndex}>
         <div className="margin-line"></div>
 
         <div
           className="paper-content"
-         style={{
-  fontFamily: settings.fontFamily,
-  fontSize: settings.fontSize,
-  color: settings.inkColor,
-  letterSpacing: `${settings.letterSpacing}px`,
-}}
+          style={{
+            fontFamily: settings.fontFamily,
+            fontSize: settings.fontSize,
+            color: settings.inkColor,
+            letterSpacing: `${settings.letterSpacing}px`,
+            wordSpacing: `${settings.wordSpacing}px`,
+            lineHeight: settings.lineHeight,
+            padding: `${settings.margin}px`,
+          }}
         >
-          {settings.text || "Your handwriting preview will appear here."}
+          {page.map((line, lineIndex) => (
+            <div key={lineIndex}>{line}</div>
+          ))}
         </div>
       </div>
+    ))
+  )}
+</div>
+
+      {/* Rest of your preview code */}
     </div>
   );
 }

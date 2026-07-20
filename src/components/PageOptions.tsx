@@ -1,16 +1,8 @@
+import type { Settings, SetSettings } from "../types/settings";
+import { PAGE_SIZES } from "../constants/pageSizes";
 type PageOptionsProps = {
-  settings: {
-    text: string;
-    fontFamily: string;
-    fontSize: number;
-  };
-  setSettings: React.Dispatch<
-    React.SetStateAction<{
-      text: string;
-      fontFamily: string;
-      fontSize: number;
-    }>
-  >;
+  settings: Settings;
+  setSettings: SetSettings;
 };
 
 function PageOptions({
@@ -20,7 +12,20 @@ function PageOptions({
   return (
     <div className="panel">
       <h3>Page Options</h3>
+<label>Page Size</label>
 
+<select
+  value={settings.pageSize}
+  onChange={(e) =>
+    setSettings({
+      ...settings,
+      pageSize: e.target.value as "A4" | "Letter",
+    })
+  }
+>
+  <option value="A4">A4</option>
+  <option value="Letter">Letter</option>
+</select>
       <label>
         Font Size: <strong>{settings.fontSize}px</strong>
       </label>

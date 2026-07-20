@@ -1,16 +1,9 @@
+import type { Settings, SetSettings } from "../types/settings";
+import { handwritingFonts } from "../constants/fonts";
+
 type HandwritingOptionsProps = {
-  settings: {
-    text: string;
-    fontFamily: string;
-    fontSize: number;
-  };
-  setSettings: React.Dispatch<
-    React.SetStateAction<{
-      text: string;
-      fontFamily: string;
-      fontSize: number;
-    }>
-  >;
+  settings: Settings;
+  setSettings: SetSettings;
 };
 
 function HandwritingOptions({
@@ -33,10 +26,14 @@ function HandwritingOptions({
           })
         }
       >
-        <option value="cursive">Cursive</option>
-        <option value="Georgia">Georgia</option>
-        <option value="Arial">Arial</option>
-        <option value="monospace">Monospace</option>
+       {handwritingFonts.map((font) => (
+  <option
+    key={font.id}
+    value={font.css}
+  >
+    {font.name}
+  </option>
+))}
       </select>
     </div>
   );

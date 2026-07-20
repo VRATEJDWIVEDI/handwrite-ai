@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import type { Settings } from "./types/settings";
 import Header from "./components/Header";
 import PaperPreview from "./components/PaperPreview";
 import HandwritingOptions from "./components/HandwritingOptions";
@@ -11,12 +11,17 @@ import Output from "./components/Output";
 import Footer from "./components/Footer";
 
 function App() {
-const [settings, setSettings] = useState({
+const [settings, setSettings] = useState<Settings>({
   text: "",
-  fontFamily: "cursive",
+  fontFamily: "'Caveat', cursive",
   fontSize: 22,
   inkColor: "#000000",
   letterSpacing: 0,
+  wordSpacing: 0,
+  pageSize: "A4",
+lineHeight: 2,
+margin: 40,
+paperTheme: "notebook",
 });
 
   return (
@@ -46,7 +51,10 @@ const [settings, setSettings] = useState({
   settings={settings}
   setSettings={setSettings}
 />
-          <MarginOptions />
+          <MarginOptions
+  settings={settings}
+  setSettings={setSettings}
+/>
           <GenerateButton />
         </div>
       </main>

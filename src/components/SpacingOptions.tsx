@@ -1,20 +1,8 @@
+import type { Settings, SetSettings } from "../types/settings";
+
 type SpacingOptionsProps = {
-  settings: {
-    text: string;
-    fontFamily: string;
-    fontSize: number;
-    inkColor: string;
-    letterSpacing: number;
-  };
-  setSettings: React.Dispatch<
-    React.SetStateAction<{
-      text: string;
-      fontFamily: string;
-      fontSize: number;
-      inkColor: string;
-      letterSpacing: number;
-    }>
-  >;
+  settings: Settings;
+  setSettings: SetSettings;
 };
 
 function SpacingOptions({
@@ -25,9 +13,7 @@ function SpacingOptions({
     <div className="panel">
       <h3>Spacing Options</h3>
 
-      <label>
-        Letter Spacing: <strong>{settings.letterSpacing}px</strong>
-      </label>
+      <label>Letter Spacing</label>
 
       <input
         type="range"
@@ -41,6 +27,25 @@ function SpacingOptions({
           })
         }
       />
+
+      <p>{settings.letterSpacing}px</p>
+
+      <label>Word Spacing</label>
+
+      <input
+        type="range"
+        min="0"
+        max="20"
+        value={settings.wordSpacing}
+        onChange={(e) =>
+          setSettings({
+            ...settings,
+            wordSpacing: Number(e.target.value),
+          })
+        }
+      />
+
+      <p>{settings.wordSpacing}px</p>
     </div>
   );
 }
