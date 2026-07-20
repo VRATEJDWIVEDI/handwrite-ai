@@ -1,17 +1,35 @@
 type PaperPreviewProps = {
-  text: string;
-  setText: React.Dispatch<React.SetStateAction<string>>;
+  settings: {
+    text: string;
+    fontFamily: string;
+    fontSize: number;
+  };
+  setSettings: React.Dispatch<
+    React.SetStateAction<{
+      text: string;
+      fontFamily: string;
+      fontSize: number;
+    }>
+  >;
 };
 
-function PaperPreview({ text, setText }: PaperPreviewProps) {
+function PaperPreview({
+  settings,
+  setSettings,
+}: PaperPreviewProps) {
   return (
     <div>
       <h2>Input Text</h2>
 
       <textarea
         className="text-input"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={settings.text}
+        onChange={(e) =>
+          setSettings({
+            ...settings,
+            text: e.target.value,
+          })
+        }
         placeholder="Type something here..."
         rows={8}
       />
@@ -21,8 +39,16 @@ function PaperPreview({ text, setText }: PaperPreviewProps) {
       <div className="paper">
         <div className="margin-line"></div>
 
-        <div className="paper-content">
-          {text || "Your handwriting preview will appear here."}
+        <div
+          className="paper-content"
+         style={{
+  fontFamily: settings.fontFamily,
+  fontSize: settings.fontSize,
+  color: settings.inkColor,
+  letterSpacing: `${settings.letterSpacing}px`,
+}}
+        >
+          {settings.text || "Your handwriting preview will appear here."}
         </div>
       </div>
     </div>

@@ -11,7 +11,13 @@ import Output from "./components/Output";
 import Footer from "./components/Footer";
 
 function App() {
-  const [text, setText] = useState("");
+const [settings, setSettings] = useState({
+  text: "",
+  fontFamily: "cursive",
+  fontSize: 22,
+  inkColor: "#000000",
+  letterSpacing: 0,
+});
 
   return (
     <div className="app">
@@ -20,15 +26,26 @@ function App() {
       <main className="main-layout">
         <div className="left-panel">
           <PaperPreview
-            text={text}
-            setText={setText}
+            settings={settings}
+            setSettings={setSettings}
           />
         </div>
 
         <div className="right-panel">
-          <HandwritingOptions />
-          <PageOptions />
-          <SpacingOptions />
+          <HandwritingOptions
+            settings={settings}
+            setSettings={setSettings}
+          />
+
+          <PageOptions
+            settings={settings}
+            setSettings={setSettings}
+          />
+
+          <SpacingOptions
+  settings={settings}
+  setSettings={setSettings}
+/>
           <MarginOptions />
           <GenerateButton />
         </div>
