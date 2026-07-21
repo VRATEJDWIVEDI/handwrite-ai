@@ -182,3 +182,7 @@
     border-right-color: var(--border);
   }
 }
+.generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

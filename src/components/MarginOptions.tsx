@@ -9,7 +9,24 @@ function MarginOptions({ settings, setSettings }: MarginOptionsProps) {
   return (
     <div className="panel">
       <h3>Page Layout</h3>
+        <label>Paper Theme</label>
 
+<select
+  value={settings.paperTheme}
+  onChange={(e) =>
+    setSettings({
+      ...settings,
+      paperTheme: e.target.value as
+        | "notebook"
+        | "blank"
+        | "exam",
+    })
+  }
+>
+  <option value="notebook">Notebook</option>
+  <option value="blank">Blank</option>
+  <option value="exam">Exam</option>
+</select>
       <label>Margin</label>
 
       <input

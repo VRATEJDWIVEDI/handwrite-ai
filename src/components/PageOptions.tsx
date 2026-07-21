@@ -1,5 +1,5 @@
 import type { Settings, SetSettings } from "../types/settings";
-import { PAGE_SIZES } from "../constants/pageSizes";
+
 type PageOptionsProps = {
   settings: Settings;
   setSettings: SetSettings;

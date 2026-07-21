@@ -1,6 +1,8 @@
+import PaperPage from "./PaperPage";
 import type { Settings, SetSettings } from "../types/settings";
 import { wrapText } from "../utils/textWrapper";
 import { paginate } from "../utils/pagination";
+
 
 type PaperPreviewProps = {
   settings: Settings;
@@ -62,28 +64,14 @@ function PaperPreview({
       </div>
     </div>
   ) : (
-    pages.map((page, pageIndex) => (
-      <div className="paper" key={pageIndex}>
-        <div className="margin-line"></div>
-
-        <div
-          className="paper-content"
-          style={{
-            fontFamily: settings.fontFamily,
-            fontSize: settings.fontSize,
-            color: settings.inkColor,
-            letterSpacing: `${settings.letterSpacing}px`,
-            wordSpacing: `${settings.wordSpacing}px`,
-            lineHeight: settings.lineHeight,
-            padding: `${settings.margin}px`,
-          }}
-        >
-          {page.map((line, lineIndex) => (
-            <div key={lineIndex}>{line}</div>
-          ))}
-        </div>
-      </div>
-    ))
+pages.map((page, pageIndex) => (
+  <PaperPage
+    key={pageIndex}
+    page={page}
+    settings={settings}
+    pageNumber={pageIndex + 1}
+  />
+))
   )}
 </div>
 
