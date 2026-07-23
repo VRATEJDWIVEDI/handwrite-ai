@@ -231,3 +231,76 @@ footer {
 
   color:#888;
 }
+.upload-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 180px;
+
+  border: 2px dashed #6366f1;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  margin-bottom: 24px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.upload-card:hover {
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.image-preview-card {
+  margin: 20px 0;
+}
+
+.image-preview {
+  width: 100%;
+  max-width: 400px;
+
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.ocr-progress {
+  margin-top: 20px;
+}
+
+.ocr-progress progress {
+  width: 100%;
+  height: 12px;
+}
+.upload-content {
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.upload-content h3 {
+  margin: 0;
+}
+
+.upload-content p {
+  color: gray;
+  margin-top: 6px;
+}
+.upload-card.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.ocr-success {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 500;
+}

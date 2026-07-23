@@ -7,11 +7,15 @@ export type Settings = {
   inkColor: string;
   letterSpacing: number;
   wordSpacing: number;
-
   pageSize: "A4" | "Letter";
   lineHeight: number;
   margin: number;
   paperTheme: "notebook" | "blank" | "exam";
+
+  imagePreview: string | null;
+  ocrProgress: number;
+  isProcessingOCR: boolean;
+  ocrError: string | null;
 };
 
 export type SetSettings = Dispatch<SetStateAction<Settings>>;

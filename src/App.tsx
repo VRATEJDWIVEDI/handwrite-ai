@@ -1,3 +1,4 @@
+import UploadImage from "./components/UploadImage";
 import { useState } from "react";
 import type { Settings } from "./types/settings";
 import Header from "./components/Header";
@@ -19,9 +20,14 @@ const [settings, setSettings] = useState<Settings>({
   letterSpacing: 0,
   wordSpacing: 0,
   pageSize: "A4",
-lineHeight: 2,
-margin: 40,
-paperTheme: "notebook",
+  lineHeight: 2,
+  margin: 40,
+  paperTheme: "notebook",
+
+  imagePreview: null,
+  ocrProgress: 0,
+  isProcessingOCR: false,
+  ocrError: null,
 });
 
   return (
@@ -56,6 +62,10 @@ paperTheme: "notebook",
   setSettings={setSettings}
 />
           <GenerateButton />
+          <UploadImage
+  settings={settings}
+  setSettings={setSettings}
+/>
         </div>
       </main>
 
