@@ -1,3 +1,4 @@
+import ControlGroup from "./ControlGroup";
 import type { Settings, SetSettings } from "../types/settings";
 
 type SpacingOptionsProps = {
@@ -10,42 +11,44 @@ function SpacingOptions({
   setSettings,
 }: SpacingOptionsProps) {
   return (
-    <div className="panel">
-      <h3>Spacing Options</h3>
+    <div className="options-group">
+      <ControlGroup
+        label="Letter Spacing"
+        value={`${settings.letterSpacing}px`}
+      >
+        <input
+          className="slider-control"
+          type="range"
+          min="0"
+          max="10"
+          value={settings.letterSpacing}
+          onChange={(e) =>
+            setSettings({
+              ...settings,
+              letterSpacing: Number(e.target.value),
+            })
+          }
+        />
+      </ControlGroup>
 
-      <label>Letter Spacing</label>
-
-      <input
-        type="range"
-        min="0"
-        max="10"
-        value={settings.letterSpacing}
-        onChange={(e) =>
-          setSettings({
-            ...settings,
-            letterSpacing: Number(e.target.value),
-          })
-        }
-      />
-
-      <p>{settings.letterSpacing}px</p>
-
-      <label>Word Spacing</label>
-
-      <input
-        type="range"
-        min="0"
-        max="20"
-        value={settings.wordSpacing}
-        onChange={(e) =>
-          setSettings({
-            ...settings,
-            wordSpacing: Number(e.target.value),
-          })
-        }
-      />
-
-      <p>{settings.wordSpacing}px</p>
+      <ControlGroup
+        label="Word Spacing"
+        value={`${settings.wordSpacing}px`}
+      >
+        <input
+          className="slider-control"
+          type="range"
+          min="0"
+          max="20"
+          value={settings.wordSpacing}
+          onChange={(e) =>
+            setSettings({
+              ...settings,
+              wordSpacing: Number(e.target.value),
+            })
+          }
+        />
+      </ControlGroup>
     </div>
   );
 }

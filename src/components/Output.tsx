@@ -1,6 +1,6 @@
 function Output() {
   return (
-    <section>
+    <section className="output">
       <h2>Output</h2>
 
       <p>No images generated.</p>

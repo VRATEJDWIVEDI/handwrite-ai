@@ -1,0 +1,29 @@
+.sidebar-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.sidebar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.sidebar-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.sidebar-card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sidebar-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

@@ -1,0 +1,120 @@
+/* ==========================================
+   Preview Container
+========================================== */
+
+.preview-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+/* ==========================================
+   Paper
+========================================== */
+
+.paper {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+  height: 700px;
+
+  margin: 25px auto;
+
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.paper:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* ==========================================
+   Paper Themes
+========================================== */
+
+.paper.blank {
+  background: white;
+}
+
+.paper.notebook {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    white 0,
+    white 31px,
+    #c9dcff 32px
+  );
+}
+
+.paper.exam {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    white 0,
+    white 31px,
+    #d8d8d8 32px
+  );
+
+  border-left: 3px solid red;
+}
+
+/* ==========================================
+   Margin Line
+========================================== */
+
+.margin-line {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 60px;
+
+  width: 2px;
+
+  background: crimson;
+}
+
+/* ==========================================
+   Handwriting Content
+========================================== */
+
+.paper-content {
+  position: absolute;
+
+  top: 20px;
+  left: 80px;
+  right: 30px;
+
+  white-space: pre-wrap;
+
+  font-family: cursive;
+  font-size: 22px;
+  line-height: 32px;
+}
+
+/* ==========================================
+   Page Number
+========================================== */
+
+.page-number {
+  position: absolute;
+
+  top: 12px;
+  right: 20px;
+
+  font-size: 13px;
+  color: #888;
+}
